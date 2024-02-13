@@ -21,7 +21,9 @@ public class spawn : MonoBehaviour
             Spawn();
             InvokeRepeating("Spawn", 0.0f ,1.0f);
         }
-       
+      else if(!Input.GetKeyDown(KeyCode.Space)){
+             CancelInvoke();
+      }
     }
 
     // Update is called once per frame
