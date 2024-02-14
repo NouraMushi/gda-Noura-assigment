@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class SphereSicript : MonoBehaviour
 {
+    
     // [SerializeField] private float m_speed;
     // [SerializeField] private float m_lifetime;
     void Awake()
     {
-        Destroy(gameObject , 2.0f);
+        Destroy(gameObject , 0.1f);
     }
     
 

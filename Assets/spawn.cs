@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class spawn : MonoBehaviour
 {
-    [SerializeField] public GameObject m_prefab1;
+    [SerializeField] private GameObject m_prefab1;
+    private Rigidbody t_ridibody ;
     // [SerializeField] private Vector3 m_direction;
     // Start is called before the first frame update
     // void Update()
@@ -14,14 +15,19 @@ public class spawn : MonoBehaviour
     // }
 
 
+    // Start is called before the first frame update
+    void Awake()
+    {
+        t_ridibody = GetComponent<Rigidbody>();
+    }
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.T))
         {
-            Spawn();
-            InvokeRepeating("Spawn", 0.0f ,1.0f);
+            SpawnC();
+            InvokeRepeating("SpawnC", 0.0f ,0.5f);
         }
-      else if(!Input.GetKeyDown(KeyCode.Space)){
+      else if(!Input.GetKeyDown(KeyCode.T)){
              CancelInvoke();
       }
     }
@@ -34,8 +40,18 @@ public class spawn : MonoBehaviour
 
     //     }
     // }
-    void Spawn(){
-        Instantiate(m_prefab1);
+    void SpawnC(){
+        // Instantiate(m_prefab1);
+        // Instantiate(m_prefab1 , transform.position , Quaternion.identity );
+
+        GameObject obj = Instantiate(m_prefab1, transform.position, Quaternion.identity);
+        Rigidbody objRb = obj.GetComponent<Rigidbody>();
+
+        if (objRb != null)
+        {
+            // قم بتطبيق قوى أو نبضات على المكون Rigidbody للكائن المنشأ
+            objRb.AddForce(Vector3.forward * 10f, ForceMode.Impulse);
+        }
     }
     
 }
