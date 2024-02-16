@@ -17,7 +17,7 @@ public class NewBehaviourScript : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            transform.position += Vector3.forward * m_speed * Time.deltaTime; 
+            transform.position += Vector3.up * m_speed * Time.deltaTime; 
         }
 
         if (Input.GetKey(KeyCode.DownArrow))

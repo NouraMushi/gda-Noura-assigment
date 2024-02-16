@@ -9,13 +9,13 @@ public class SphereSicript : MonoBehaviour
     // [SerializeField] private float m_lifetime;
     void Awake()
     {
-        Destroy(gameObject , 0.1f);
+        Destroy(gameObject , 5.0f);
     }
     
 
     // Update is called once per frame
     void Update()
     {
-        transform.position += 0.1f * Time.deltaTime * Vector3.forward;
+        transform.position += 5.0f * Time.deltaTime * Vector3.forward;
     }
 }
