@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class playreScript : MonoBehaviour
+public class PlayerColor : MonoBehaviour
 {
     // Start is called before the first frame update
 
@@ -17,21 +17,23 @@ public class playreScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-     void OnCollisionEnter(Collision col){
-          if (col.gameObject.tag == "killplayer"){
+    void OnCollisionEnter(Collision col)
+    {
+        if (col.gameObject.tag == "killplayer")
+        {
             //  Debug.Log($"Kill");
             // Destroy(gameObject);
 
             playerMaterial.color = Color.red;
 
             // إعادة لون اللاعب بعد 2 ثانية
-           Invoke("ResetColor", 2.0f);
-  }
-}
-void ResetColor()
+            Invoke("ResetColor", 2.0f);
+        }
+    }
+    void ResetColor()
     {
         playerMaterial.color = Color.white;
     }

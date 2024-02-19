@@ -6,7 +6,7 @@ public class NewBehaviourScript : MonoBehaviour
 {
     // [SerializeField] private Vector3 m_direction;
     [SerializeField] private float m_speed;
-    
+
 
     // Vector3 forwardMove = new Vector3(0.1f, 0, 0);
     // Vector3 BackourdMove = new Vector3(-0.1f, 0, 0);
@@ -17,12 +17,12 @@ public class NewBehaviourScript : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            transform.position += Vector3.up * m_speed * Time.deltaTime; 
+            transform.position += Vector3.up * m_speed * Time.deltaTime;
         }
 
         if (Input.GetKey(KeyCode.DownArrow))
         {
-            transform.position += Vector3.forward * m_speed * Time.deltaTime ;
+            transform.position += Vector3.forward * m_speed * Time.deltaTime;
         }
 
         if (Input.GetKey(KeyCode.LeftArrow))
@@ -33,6 +33,6 @@ public class NewBehaviourScript : MonoBehaviour
         if (Input.GetKey(KeyCode.RightArrow))
         {
             transform.position += Vector3.right * m_speed * Time.deltaTime;
-        }   
+        }
     }
 }

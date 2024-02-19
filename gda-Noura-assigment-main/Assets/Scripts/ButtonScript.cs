@@ -17,7 +17,7 @@ public class ButtonScript : MonoBehaviour
 
         // Ensure pause menu is initially hidden
         pauseMenu.SetActive(false);
-        
+
     }
 
     public void pauseGame()
@@ -40,8 +40,8 @@ public class ButtonScript : MonoBehaviour
             return; // Prevent redundant resuming
         }
         isPaused = false;
-         pauseMenu.SetActive(false); // Hide pause menu
-        //  resumeButton.gameObject.SetActive(true);
-         Time.timeScale = 1.0f; 
+        pauseMenu.SetActive(false); // Hide pause menu
+                                    //  resumeButton.gameObject.SetActive(true);
+        Time.timeScale = 1.0f;
     }
 }

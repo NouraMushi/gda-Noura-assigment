@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScriptR : MonoBehaviour
+public class PlayerMove : MonoBehaviour
 {
-    private Rigidbody m_ridibody ;
+    private Rigidbody m_ridibody;
     // Start is called before the first frame update
     void Awake()
     {
@@ -16,22 +16,22 @@ public class ScriptR : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            m_ridibody.velocity = Vector3.up;
+            m_ridibody.velocity = Vector3.up * 5.0f;
         }
 
         if (Input.GetKey(KeyCode.DownArrow))
         {
-            m_ridibody.velocity = Vector3.forward;
+            m_ridibody.velocity = Vector3.forward * 5.0f;
         }
-        
+
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            m_ridibody.velocity = Vector3.left;
+            m_ridibody.velocity = Vector3.left * 5.0f;
         }
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            m_ridibody.velocity = Vector3.right;
+            m_ridibody.velocity = Vector3.right * 5.0f;
         }
-       
+
     }
 }
