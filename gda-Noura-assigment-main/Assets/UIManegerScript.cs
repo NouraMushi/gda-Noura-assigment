@@ -27,6 +27,7 @@ public class UIManegerScript : MonoBehaviour
     // Update is called once per frame
     public void UpdateKillCounterUI()
     {
+        KillCount++;
         KillCounter_TMP.text = KillCount.ToString();
     }
 }

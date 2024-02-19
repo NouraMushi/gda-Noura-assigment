@@ -16,7 +16,7 @@ public class cubespawn : MonoBehaviour
     [SerializeField] private GameObject m_prefab2;
 
     private bool isSpawning = false;
-
+    [SerializeField] private EnemyData enemydata;
     void FixedUpdate()
     {
         if (Input.GetKey(KeyCode.F))
@@ -27,7 +27,7 @@ public class cubespawn : MonoBehaviour
         // بدء أو إيقاف الإطلاق بناءً على مفتاح التبديل
         if (isSpawning)
         {
-            InvokeRepeating("SpawnC", 0.0f, 3.0f);
+            InvokeRepeating("SpawnC", 0.0f, enemydata.Shootdelay);
         }
         else
         {

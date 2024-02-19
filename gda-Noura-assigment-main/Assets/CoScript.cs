@@ -9,8 +9,7 @@ public class CoScript : MonoBehaviour
       void OnCollisionEnter(Collision col){
           if (col.gameObject.tag == "Player"){
             Destroy(gameObject);
-            UIManegerScript.instance.KillCount++;
+            }
             UIManegerScript.instance.UpdateKillCounterUI();
-          }
-}
+        }
 }
