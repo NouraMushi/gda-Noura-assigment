@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class ButtonScript : MonoBehaviour
 {
     [SerializeField] private Button pauseButton;
@@ -43,5 +44,10 @@ public class ButtonScript : MonoBehaviour
         pauseMenu.SetActive(false); // Hide pause menu
                                     //  resumeButton.gameObject.SetActive(true);
         Time.timeScale = 1.0f;
+    }
+    public void HandleSceneLoad()
+    {
+        SceneManager.LoadScene(1);
+        // Scenelevel1.onClick.AddListener(HandleSceneLoad);
     }
 }

@@ -55,6 +55,7 @@ public class EnemySpawn : MonoBehaviour
     {
 
         StartCoroutine(SpawnEnemyCoroutine());
+        // StartCoroutine(MoveEnemyCoroutine());
     }
 
 
@@ -69,5 +70,35 @@ public class EnemySpawn : MonoBehaviour
             yield return new WaitForSeconds(2.0f);
         }
     }
+
+    // private IEnumerator MoveEnemyCoroutine()
+    // {
+    //     Rigidbody er = GetComponent<Rigidbody>();
+    //     while (true)
+    //     {
+    //         for (int i = 0; i < 200; i++)
+    //         {
+    //             er.velocity = Vector3.up * 0.1f;
+    //             yield return new WaitForFixedUpdata();
+    //         }
+    //         for (int i = 0; i < 200; i++)
+    //         {
+    //             er.velocity = Vector3.zero;
+    //             yield return new WaitForFixedUpdata();
+    //         }
+    //         for (int i = 0; i < 200; i++)
+    //         {
+    //             er.velocity = Vector3.down * 0.1f;
+    //             yield return new WaitForFixedUpdata();
+    //         }
+    //         for (int i = 0; i < 200; i++)
+    //         {
+    //             er.velocity = Vector3.zero;
+    //             yield return new WaitForFixedUpdata();
+    //         }
+
+    //     }
+    // }
+
 
 }
