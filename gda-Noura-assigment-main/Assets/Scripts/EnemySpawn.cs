@@ -62,7 +62,10 @@ public class EnemySpawn : MonoBehaviour
     {
         while (true)
         {
-            Instantiate(m_prefab2, transform.position + Vector3.back * 3, Quaternion.identity);
+            for (int i = 0; i < 3; i++)
+            {
+                Instantiate(m_prefab2, transform.position + Vector3.back * 3, Quaternion.identity);
+            }
             yield return new WaitForSeconds(2.0f);
         }
     }
