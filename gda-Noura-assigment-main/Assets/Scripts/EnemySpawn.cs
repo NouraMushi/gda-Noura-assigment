@@ -15,40 +15,56 @@ public class EnemySpawn : MonoBehaviour
 
     [SerializeField] private GameObject m_prefab2;
 
-    private bool isSpawning = false;
+    // private bool isSpawning = false;
     [SerializeField] private EnemyData enemydata;
-    void FixedUpdate()
+    //     void FixedUpdate()
+    //     {
+    //         // if (Input.GetKey(KeyCode.F))
+    //         // {
+    //         //     // تبديل الإطلاق المستمر
+    //         //     isSpawning = !isSpawning;
+
+    //         //     // بدء أو إيقاف الإطلاق بناءً على مفتاح التبديل
+    //         //     if (isSpawning)
+    //         //     {
+    //         //         InvokeRepeating("SpawnC", 0.0f, enemydata.Shootdelay);
+    //         //     }
+    //         //     else
+    //         //     {
+    //         //         CancelInvoke();
+    //         //     }
+    //         // }
+    //         // if (Input.GetKey(KeyCode.P))
+    //         // {
+    //         //     isSpawning = !isSpawning;
+    //         //     if (!isSpawning)
+    //         //     {
+    //         //         CancelInvoke();
+    //         //     }
+    //         // }
+
+    //         //  InvokeRepeating("SpawnC", 0.0f ,20.0f);
+    // }
+
+    // void SpawnC()
+    // {
+    //     Instantiate(m_prefab2, transform.position + Vector3.back * 3, Quaternion.identity);
+    // }
+
+    private void Awake()
     {
-        if (Input.GetKey(KeyCode.F))
-        {
-            // تبديل الإطلاق المستمر
-            isSpawning = !isSpawning;
 
-            // بدء أو إيقاف الإطلاق بناءً على مفتاح التبديل
-            if (isSpawning)
-            {
-                InvokeRepeating("SpawnC", 0.0f, enemydata.Shootdelay);
-            }
-            else
-            {
-                CancelInvoke();
-            }
-        }
-        if (Input.GetKey(KeyCode.P))
-        {
-            isSpawning = !isSpawning;
-            if (!isSpawning)
-            {
-                CancelInvoke();
-            }
-        }
-
-        //  InvokeRepeating("SpawnC", 0.0f ,20.0f);
+        StartCoroutine(SpawnEnemyCoroutine());
     }
 
-    void SpawnC()
+
+    private IEnumerator SpawnEnemyCoroutine()
     {
-        Instantiate(m_prefab2, transform.position + Vector3.back * 3, Quaternion.identity);
+        while (true)
+        {
+            Instantiate(m_prefab2, transform.position + Vector3.back * 3, Quaternion.identity);
+            yield return new WaitForSeconds(2.0f);
+        }
     }
 
 }
