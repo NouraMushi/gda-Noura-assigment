@@ -9,6 +9,8 @@ public class EnemyData : ScriptableObject
     public float m_speed;
     public float Shootdelay;
 
+    public bool AutoAim;  //if true bullet follow player 
+
     // public static EnemyData Create(float speed)
     // {
     //     var data = ScriptableObject.CreatInstsnce<EnemyData>();

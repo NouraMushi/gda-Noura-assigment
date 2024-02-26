@@ -9,53 +9,15 @@ public class EnemySpawn : MonoBehaviour
     {
 
     }
-
-    // Update is called once per frame
-
-
     [SerializeField] private GameObject m_prefab2;
 
     // private bool isSpawning = false;
     [SerializeField] private EnemyData enemydata;
-    //     void FixedUpdate()
-    //     {
-    //         // if (Input.GetKey(KeyCode.F))
-    //         // {
-    //         //     // تبديل الإطلاق المستمر
-    //         //     isSpawning = !isSpawning;
-
-    //         //     // بدء أو إيقاف الإطلاق بناءً على مفتاح التبديل
-    //         //     if (isSpawning)
-    //         //     {
-    //         //         InvokeRepeating("SpawnC", 0.0f, enemydata.Shootdelay);
-    //         //     }
-    //         //     else
-    //         //     {
-    //         //         CancelInvoke();
-    //         //     }
-    //         // }
-    //         // if (Input.GetKey(KeyCode.P))
-    //         // {
-    //         //     isSpawning = !isSpawning;
-    //         //     if (!isSpawning)
-    //         //     {
-    //         //         CancelInvoke();
-    //         //     }
-    //         // }
-
-    //         //  InvokeRepeating("SpawnC", 0.0f ,20.0f);
-    // }
-
-    // void SpawnC()
-    // {
-    //     Instantiate(m_prefab2, transform.position + Vector3.back * 3, Quaternion.identity);
-    // }
-
     private void Awake()
     {
 
         StartCoroutine(SpawnEnemyCoroutine());
-        // StartCoroutine(MoveEnemyCoroutine());
+        StartCoroutine(MoveEnemyCoroutine());
     }
 
 
@@ -65,40 +27,51 @@ public class EnemySpawn : MonoBehaviour
         {
             for (int i = 0; i < 3; i++)
             {
-                Instantiate(m_prefab2, transform.position + Vector3.back * 3, Quaternion.identity);
+                Shoot();
+                yield return new WaitForSeconds(0.3f);
             }
-            yield return new WaitForSeconds(2.0f);
+
+            yield return new WaitForSeconds(enemydata.Shootdelay);
         }
     }
 
-    // private IEnumerator MoveEnemyCoroutine()
-    // {
-    //     Rigidbody er = GetComponent<Rigidbody>();
-    //     while (true)
-    //     {
-    //         for (int i = 0; i < 200; i++)
-    //         {
-    //             er.velocity = Vector3.up * 0.1f;
-    //             yield return new WaitForFixedUpdata();
-    //         }
-    //         for (int i = 0; i < 200; i++)
-    //         {
-    //             er.velocity = Vector3.zero;
-    //             yield return new WaitForFixedUpdata();
-    //         }
-    //         for (int i = 0; i < 200; i++)
-    //         {
-    //             er.velocity = Vector3.down * 0.1f;
-    //             yield return new WaitForFixedUpdata();
-    //         }
-    //         for (int i = 0; i < 200; i++)
-    //         {
-    //             er.velocity = Vector3.zero;
-    //             yield return new WaitForFixedUpdata();
-    //         }
 
-    //     }
-    // }
+    private void Shoot()
+    {
+        GameObject newBullet = Instantiate(m_bullet, transform.position + Vector3.up, Quaternion.identity);
+        newBullet.GetComponent<BulletController>().Init(enemydata.m_speed, true, enemydata.AutoAim);
+    }
+
+    // #########
+
+    private IEnumerator MoveEnemyCoroutine()
+    {
+        Rigidbody er = GetComponent<Rigidbody>();
+        while (true)
+        {
+            for (int i = 0; i < 200; i++)
+            {
+                er.velocity = Vector3.up;
+                yield return new WaitForFixedUpdate();
+            }
+            for (int i = 0; i < 200; i++)
+            {
+                er.velocity = Vector3.zero;
+                yield return new WaitForFixedUpdate();
+            }
+            for (int i = 0; i < 200; i++)
+            {
+                er.velocity = Vector3.down;
+                yield return new WaitForFixedUpdate();
+            }
+            for (int i = 0; i < 200; i++)
+            {
+                er.velocity = Vector3.zero;
+                yield return new WaitForFixedUpdate();
+            }
+
+        }
+    }
 
 
 }

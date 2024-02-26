@@ -6,6 +6,13 @@ using UnityEngine;
 public class PlayerSpawn : MonoBehaviour
 {
     [SerializeField] private GameObject m_prefab1;
+    [SerializeField] private float m_bulletSpeed;
+
+    // private ButtonScript m_pauseController;
+    void Start()
+    {
+        // m_pauseController = FindObjectOfType<PauseController>();
+    }
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.T))
@@ -18,10 +25,12 @@ public class PlayerSpawn : MonoBehaviour
         }
     }
 
+
     void SpawnC()
     {
         // Instantiate(m_prefab1);
         Instantiate(m_prefab1, transform.position + Vector3.forward, Quaternion.identity);
+        newBullet.GetComponent<BulletController>().Init(m_bulletSpeed, false, false);
     }
 
 }
