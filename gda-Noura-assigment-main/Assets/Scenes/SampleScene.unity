@@ -654,6 +654,7 @@ GameObject:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
+  - component: {fileID: 963194229}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -735,6 +736,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 1.579, y: 25.98, z: -36.818}
+--- !u!114 &963194229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa983ec7b981be04698a86b577327444, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &971759052
 GameObject:
   m_ObjectHideFlags: 0
@@ -1454,7 +1467,7 @@ PrefabInstance:
     - target: {fileID: 2234046934034196206, guid: 35c7b43587a60964d9c58ce4bea1c5a1, type: 3}
       propertyPath: enemydata
       value: 
-      objectReference: {fileID: 11400000, guid: 238a562de11433546b6a5320e1da0701, type: 2}
+      objectReference: {fileID: 11400000, guid: 03fccc4ee84e2c547af7200f546379a2, type: 2}
     - target: {fileID: 5632640622053432477, guid: 35c7b43587a60964d9c58ce4bea1c5a1, type: 3}
       propertyPath: m_Constraints
       value: 120
@@ -1566,8 +1579,8 @@ Transform:
   m_GameObject: {fileID: 1191845686}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.37, y: -1.36, z: -9.3}
-  m_LocalScale: {x: 3.638519, y: 2.1465554, z: 5.5657535}
+  m_LocalPosition: {x: 6.4, y: -1.36, z: -9.3}
+  m_LocalScale: {x: 23.237177, y: 13.708844, z: 35.54534}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -2136,7 +2149,7 @@ GameObject:
   - component: {fileID: 2139549267}
   m_Layer: 0
   m_Name: Capsule
-  m_TagString: GameController
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2154,6 +2167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_prefab1: {fileID: 176608920708105792, guid: c09cf0a799f9f4d9582ff3f03a7b8cbb, type: 3}
+  m_bulletSpeed: 0
 --- !u!136 &2139549261
 CapsuleCollider:
   m_ObjectHideFlags: 0

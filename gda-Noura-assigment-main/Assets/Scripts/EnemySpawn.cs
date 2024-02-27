@@ -18,7 +18,7 @@ public class EnemySpawn : MonoBehaviour
     {
 
         StartCoroutine(SpawnEnemyCoroutine());
-        StartCoroutine(MoveEnemyCoroutine());
+        // StartCoroutine(MoveEnemyCoroutine());
     }
 
 
@@ -45,34 +45,34 @@ public class EnemySpawn : MonoBehaviour
 
     // #########
 
-    private IEnumerator MoveEnemyCoroutine()
-    {
-        Rigidbody er = GetComponent<Rigidbody>();
-        while (true)
-        {
-            for (int i = 0; i < 200; i++)
-            {
-                er.velocity = Vector3.up;
-                yield return new WaitForFixedUpdate();
-            }
-            for (int i = 0; i < 200; i++)
-            {
-                er.velocity = Vector3.zero;
-                yield return new WaitForFixedUpdate();
-            }
-            for (int i = 0; i < 200; i++)
-            {
-                er.velocity = Vector3.down;
-                yield return new WaitForFixedUpdate();
-            }
-            for (int i = 0; i < 200; i++)
-            {
-                er.velocity = Vector3.zero;
-                yield return new WaitForFixedUpdate();
-            }
+    // private IEnumerator MoveEnemyCoroutine()
+    // {
+    //     Rigidbody er = GetComponent<Rigidbody>();
+    //     while (true)
+    //     {
+    //         for (int i = 0; i < 200; i++)
+    //         {
+    //             er.velocity = Vector3.up;
+    //             yield return new WaitForFixedUpdate();
+    //         }
+    //         for (int i = 0; i < 200; i++)
+    //         {
+    //             er.velocity = Vector3.zero;
+    //             yield return new WaitForFixedUpdate();
+    //         }
+    //         for (int i = 0; i < 200; i++)
+    //         {
+    //             er.velocity = Vector3.down;
+    //             yield return new WaitForFixedUpdate();
+    //         }
+    //         for (int i = 0; i < 200; i++)
+    //         {
+    //             er.velocity = Vector3.zero;
+    //             yield return new WaitForFixedUpdate();
+    //         }
 
-        }
-    }
+    //     }
+    // }
 
 
 }

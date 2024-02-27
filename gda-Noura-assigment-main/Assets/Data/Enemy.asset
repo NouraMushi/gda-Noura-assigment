@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a629dd4a28227684c9b91dbe7fc093d7, type: 3}
   m_Name: Enemy
   m_EditorClassIdentifier: 
-  m_speed: 0
-  Shootdelay: 0
+  m_speed: 0.01
+  Shootdelay: 10
+  AutoAim: 0

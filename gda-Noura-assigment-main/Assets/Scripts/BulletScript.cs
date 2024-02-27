@@ -6,7 +6,7 @@ public class BulletScript : MonoBehaviour
 {
 
     [SerializeField] private float m_speed;
-    // [SerializeField] private float m_lifetime;
+    [SerializeField] private float m_lifetime;
     private Rigidbody m_rigidbody;
     private PlayerMove m_player;
     private Quaternion m_quat;

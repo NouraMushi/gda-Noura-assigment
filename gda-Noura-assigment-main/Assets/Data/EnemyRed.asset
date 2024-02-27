@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a629dd4a28227684c9b91dbe7fc093d7, type: 3}
   m_Name: EnemyRed
   m_EditorClassIdentifier: 
-  m_speed: 0
-  Shootdelay: 0
+  m_speed: 0.02
+  Shootdelay: 20
+  AutoAim: 1
