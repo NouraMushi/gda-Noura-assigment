@@ -13,6 +13,7 @@ public class EnemySpawn : MonoBehaviour
 
     // private bool isSpawning = false;
     [SerializeField] private EnemyData enemydata;
+    [SerializeField] private float Shootdelay;
     private void Awake()
     {
 
@@ -38,8 +39,8 @@ public class EnemySpawn : MonoBehaviour
 
     private void Shoot()
     {
-        GameObject newBullet = Instantiate(m_bullet, transform.position + Vector3.up, Quaternion.identity);
-        newBullet.GetComponent<BulletController>().Init(enemydata.m_speed, true, enemydata.AutoAim);
+        GameObject newBullet = Instantiate(m_prefab2, transform.position + Vector3.up, Quaternion.identity);
+        newBullet.GetComponent<BulletScript>().Init(enemydata.m_speed, true, enemydata.AutoAim);
     }
 
     // #########

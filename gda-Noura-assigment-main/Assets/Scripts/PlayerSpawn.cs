@@ -29,8 +29,8 @@ public class PlayerSpawn : MonoBehaviour
     void SpawnC()
     {
         // Instantiate(m_prefab1);
-        Instantiate(m_prefab1, transform.position + Vector3.forward, Quaternion.identity);
-        newBullet.GetComponent<BulletController>().Init(m_bulletSpeed, false, false);
+        GameObject newBullet = Instantiate(m_prefab1, transform.position + Vector3.forward, Quaternion.identity);
+        newBullet.GetComponent<BulletScript>().Init(m_bulletSpeed, false, false);
     }
 
 }

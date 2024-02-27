@@ -24,7 +24,7 @@ public class BulletScript : MonoBehaviour
 
         if (lookAtPlayer)
         {
-            m_player = FindObjectOfType<PlayerMovementController>();
+            m_player = FindObjectOfType<PlayerMove>();
             m_quat = Quaternion.LookRotation(m_player.transform.position - transform.position);
             m_followPlayer = followPlayer;
         }
