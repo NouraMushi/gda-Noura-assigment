@@ -5,16 +5,20 @@ using UnityEngine;
 public class EnemySpawn : MonoBehaviour
 {
     // Start is called before the first frame update
-    void Start()
-    {
 
-    }
     [SerializeField] private GameObject m_prefab2;
 
-    // private bool isSpawning = false;
     [SerializeField] private EnemyData enemydata;
     [SerializeField] private float Shootdelay;
-    private void Awake()
+    public bool isSpawning = true;
+
+
+    void Start()
+    {
+        if (isSpawning)
+            StartShoot();
+    }
+    public void StartShoot()
     {
 
         StartCoroutine(SpawnEnemyCoroutine());

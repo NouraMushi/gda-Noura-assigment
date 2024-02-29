@@ -18,13 +18,13 @@ public class PlayerMove : MonoBehaviour
 
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            m_ridibody.velocity = Vector3.up * 5.0f;
+            m_ridibody.velocity = Vector3.forward * 5.0f;
             // moving = true;
         }
 
         if (Input.GetKey(KeyCode.DownArrow))
         {
-            m_ridibody.velocity = Vector3.forward * 5.0f;
+            m_ridibody.velocity = Vector3.back * 5.0f;
             // moving = true;
         }
 
