@@ -44,7 +44,7 @@ public class EnemySpawn : MonoBehaviour
     private void Shoot()
     {
         GameObject newBullet = Instantiate(m_prefab2, transform.position + Vector3.up, Quaternion.identity);
-        newBullet.GetComponent<BulletScript>().Init(enemydata.m_speed, true, enemydata.AutoAim);
+        newBullet.GetComponent<BulletScript>().Init(enemydata.m_speed, true, enemydata.AutoAim, false);
     }
 
     // #########
