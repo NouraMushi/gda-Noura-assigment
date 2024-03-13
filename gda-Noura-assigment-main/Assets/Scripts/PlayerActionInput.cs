@@ -42,3 +42,4 @@ public class PlayerActionInput : MonoBehaviour
     // p_animator.SetBool("Running", moving);
     // transform.rotation = Quaternion.LookRotation(rigidbody.velocity);
 }
+
